@@ -1,0 +1,142 @@
+
+/* ===== MOBILE FIRST ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #f0f5f1;
+    color: #173b33;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header,
+main,
+footer {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+/* Mobile: one column with 10px gap */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+figure {
+    margin: 0;
+    padding: 14px;
+    border: 3px solid #245a4b;
+    background-color: #ffffff;
+    color: #173b33;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+figcaption {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+}
+
+a {
+    color: #124c3d;
+    text-decoration: underline;
+}
+
+/* ===== TABLET: 772px AND ABOVE ===== */
+
+@media screen and (min-width: 772px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    figure {
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+    }
+
+    figure img {
+        width: 80%;
+    }
+
+    figure:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ===== LARGE SCREEN: 992px AND ABOVE ===== */
+
+@media screen and (min-width: 992px) {
+    figure {
+        border-radius: 0;
+        aspect-ratio: auto;
+    }
+
+    figure img {
+        width: 100%;
+    }
+
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ===== DARK COLOR SCHEME ===== */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #101b17;
+        color: #f7f2e1;
+    }
+
+    figure {
+        background-color: #24382e;
+        color: #fff0b5;
+        border-color: #000000;
+    }
+
+    a {
+        color: #ffdf89;
+    }
+}
